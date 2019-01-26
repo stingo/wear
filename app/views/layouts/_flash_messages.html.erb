@@ -1,0 +1,11 @@
+   <div class="container">
+<% flash.each do |key, value| %>
+<div class="alert alert-primary alert-shadow alert-dismissible fade show text-center" role="alert" style="z-index: 999!important">
+    <%= value %>
+   
+    <button type="button" class="close mr-5" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true" class="wht" style="font-size: 25px">&times;</span>
+    </button>
+</div>
+ <% end %>
+</div>

@@ -1,32 +1,238 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
+<!-- =-=-=-=-=-=-= Main Content Area =-=-=-=-=-=-= -->
+      <div class="main-content-area clearfix">
+         <!-- =-=-=-=-=-=-= Latest Ads =-=-=-=-=-=-= -->
+         <section class="section-padding no-top gray ">
+            <!-- Main Container -->
+            <div class="container">
+               <!-- Row -->
+               <div class="row">
+                  <div class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
+                     <!-- end post-padding -->
+                     
+
+                     <div class="post-ad-form postdetails">
+                      <%= simple_form_for(@post) do |f| %> 
+
+
+
+  <%= f.error_notification %>
+<div class="row">
+ <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
       <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li style="list-style: square inside "><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+</div>
+<br>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+
+
+                        <form  class="submit-form">
+                          
+
+
+                           <!-- Title  -->
+  <div class="blog-sidebar">
+                        <!-- Categories --> 
+                        <div class="widget">
+
+
+                            <div class="widget-heading">
+                              <h4 class="panel-title"><a>Details</a></h4>
+                           </div>
+
+
+
+                           <div class="row">
+
+                    
+                      <div class="form-group  col-md-6  col-sm-6">
+                        <label><span class="required">*</span>Name </label>
+                        <%= f.text_field :name, :label => 'name', required: true, :autofocus => true, :placeholder => 'format e.g Fried Rice', class: "form-control" %>
+                     </div>
+                   
+
+                     <div class="form-group  col-md-6  col-sm-6">
+                        <label><span class="required">*</span>Price <small>(or starting from) **numbers only</small></label>
+                        <%= f.text_field :price, :label => 'price', required: true, :autofocus => true, :placeholder => 'format e.g 20 or 3.56', class: "form-control" %>
+                     </div>
+</div>
+
+
+
+
+
+                           
+
+ <div class="row">
+
+
+                         <!--div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Country<small>&nbsp&nbsp&nbspItem location</small></label>
+                                 <%#= country_select("post", "country",  { include_blank: 'Select country' }, { class: 'form-control' } ) %>
+                           </div-->
+
+                          <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Fashion<small>&nbsp&nbsp&nbspItem location</small></label>
+                                 <%= f.collection_select :fashion_id, Fashion.all, :id, :name, {:include_blank => 'Select fashion'}, :class => "form-control", input_html: { class: "dropdown-toggle "} %>
+                           </div>
+
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <label><span class="required">*</span>Currency</label>
+                        <%= currency_select("post", "currency",  { include_blank: 'Select local currency' }, { class: 'form-control' } ) %>
+                     </div>
+
+                    
+
+                     
+                          
+</div>
+
+
+
+
+
+
+ <div class="row">
+
+  <%# if current_profile.restaurants.blank? %>
+
+  <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Restaurant / Takeaway Spot</label>
+                                 <input class="form-control disabled" style="pointer-events: none; cursor: not-allowed;" placeholder="you don't have a restaurant/takeaway spot" type="text">
+                              </div>
+
+ <%# else %>
+
+
+                      <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <label>Restaurant </label>
+                       <%#= f.collection_select :restaurant_id, current_profile.restaurants, :id, :name, {:include_blank => 'Select Restaurant'}, :class => "form-control", input_html: { class: "dropdown-toggle "} %>
+                     </div>
+
+  <%# end %>
+
+                    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                        <label><span class="required">*</span>Meals</label>
+                        <%#= f.collection_select :meal_id, Meal.all, :id, :name, {:include_blank => 'Select meal type'}, :class => "form-control", input_html: { class: "dropdown-toggle "} %>
+                     </div>
+                          
+</div>
+
+
+
+
+  <div class="row">
+      <div class="form-group  col-md-12  col-sm-12">
+                        <label><span class="required">*</span>Short Description /Additional Info</label>
+                       
+                        <%= f.text_area :description, required: true, :autofocus => true, :placeholder => 'e.g Fried Rice, egg, yellow curry powder, onion, carrot, broccoli and cucumber', :input_html => {:rows => 8}, class: "form-control" %>
+                     </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <br>
+
+   <div class="row">
+                              <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Valid Phone Number(s)<small> for contact</small></label>
+
+                                 <%#= f.text_field :phone_number, :label => 'Phone number', :placeholder => 'eg 00321123456789', class: "form-control" %>
+                                 
+                              </div>
+                             
+                           </div>
+
+  
+
+  </div>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+
+  <div class="blog-sidebar">
+                        <!-- Categories --> 
+                        <div class="widget">
+
+
+                            <div class="widget-heading">
+                              <h4 class="panel-title"><a>Location </a></h4>
+                           </div>
+
+                           <!-- end row -->
+                           <div class="row">
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Local Area/Zip or Post code </label>
+                                 <%#= f.text_field :local_area, :label => 'Local Area', :placeholder => 'local location', class: "form-control" %>
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Town</label>
+                                 <%#= f.text_field :town, :label => 'Town Location', :placeholder => 'Town Name', class: "form-control" %>
+                              </div>
+                           </div>
+                            <!-- end row -->
+                           <div class="row">
+                              <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                                 <label class="control-label">Region / County / State</label>
+                                 <%#= f.text_field :region, :placeholder => 'Region', class: "form-control" %>
+                              </div>
+                              <div class="form-group  col-md-6  col-sm-6">
+                        <label><span class="required">*</span>Add a Nice Food or beverage Images</label>
+                        <%#= f.file_field :postimages, :label => 'Add a Nice Food or beverage Images', multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png", :class => "form-control" %> 
+                               </div>
+                           </div>
+
+
+                           
+                         
+
+
+
+                         </div>
+                       </div>
+                           <!-- end row -->
+  
+                           <!-- end row -->
+                           <!-- Image Upload  -->
+                          
+                           <!-- end row -->
+                          
+                          
+
+                            <div class="row">
+                              <div class="form-actions text-center">
+
+                              <%= f.submit "Publish", class: "btn btn-theme" %>&nbsp &nbsp &nbsp <%= link_to "Cancel", :back, :class =>"btn btn-sm btn btn-danger" %>
+                             
+                           </div>
+                              
+
+                            </div>
+                        </form>
+
+      <% end %>
+                     </div>
+                     <!-- end post-ad-form-->
+                  </div>
+                  <!-- end col -->
+                  <!-- Right Sidebar -->
+                  <div class="col-md-4 col-xs-12 col-sm-12">
+                     <!-- Sidebar Widgets -->
+                     <div class="blog-sidebar">
+                        <!-- Categories --> 
+  <%#= render 'shared/safety_slide' %>
+                        <!-- Latest News --> 
+                     </div>
+                     <!-- Sidebar Widgets End -->
+                  </div>
+                  <!-- Middle Content Area  End --><!-- end col -->
+               </div>
+               <!-- Row End -->
+            </div>
+            <!-- Main Container End -->
+         </section>

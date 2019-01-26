@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index, :show]
 
   # GET /posts
   # GET /posts.json
@@ -10,21 +11,26 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post_postimages = @post.postimages
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+     @fashions = Fashion.all.map{|c| [ c.name, c.id ] }
   end
 
   # GET /posts/1/edit
   def edit
+    @post = Post.friendly.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
+    #@post = current_user.posts.build(post_params)
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save
@@ -40,6 +46,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post = Post.friendly.find(params[:id])
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -64,11 +71,11 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :description, :price)
+      params.require(:post).permit(:name, :description, :price, :fashion_id, :postimages_cache, {postimages: []} )
     end
 end

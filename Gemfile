@@ -36,19 +36,19 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'masonry-rails'
 
-
-#gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.2'
 gem 'friendly_id', '~> 5.1'
-#gem 'simple_form'
+gem 'simple_form'
 gem 'font_awesome5_rails'
 gem 'font-awesome-rails' # Font-awesome icon
 gem 'ionicons-rails', '~> 2.0'
 gem 'jquery-rails'
-#gem 'jquery-ui-rails'
+gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
-#gem 'bootstrap-sass', '~> 3.3.7'
-#gem 'carrierwave', '~> 1.0'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'trix-rails', require: 'trix'
 gem 'country_select', '~> 3.1', '>= 3.1.1'

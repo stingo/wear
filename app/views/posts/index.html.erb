@@ -1,31 +1,640 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>Portfolio - Fullwidth Masonry | Front - Responsive Website Template</title>
 
-<h1>Posts</h1>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <!-- Favicon -->
+  
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.name %></td>
-        <td><%= post.description %></td>
-        <td><%= post.price %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <!-- Google Fonts -->
+ 
 
-<br>
+  <!-- CSS Implementing Plugins -->
 
-<%= link_to 'New Post', new_post_path %>
+
+
+  
+
+  <!-- CSS Front Template -->
+ 
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <!-- ========== HEADER ========== -->
+
+  <!-- ========== END HEADER ========== -->
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+
+    
+ <% if current_user.is_a?(GuestUser) %>
+
+
+
+    <!-- Hero Section -->
+   
+    <div class="d-md-flex bg-img-hero africanwear-mega-bg ">
+
+      
+      <div class="container d-md-flex align-items-md-center height-md-100vh position-relative space-top-2 space-bottom-3 space-top-md-3 space-top-lg-2 space-bottom-md-0">
+        <div class="w-lg-65 mb-5">
+          <div class="w-lg-65 w-xl-50 mb-5">
+            <h1 class="display-4 text-white">Sell your <strong class="font-weight-semi-bold">house</strong> online</h1>
+          </div>
+ <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+
+
+
+
+
+
+          <!-- Form -->
+          <form class="js-validate">
+            <div class="form-row mb-2">
+              
+
+
+
+             <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12 mb-2">
+                <div class="js-form-message">
+                  <label class="sr-only">Displayname</label>
+                  <div class="input-group">
+                                 <small class="text-white"><%= f.text_field :displayname, required: true, :placeholder => 'enter your displayname', :class => "form-control" %>
+                                 only letters(a-z), numbers(0-9), between 6-50 are allowed, no spaces between characters </small>
+                  </div>
+                </div>
+              </div>
+
+                            <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12 mb-2">
+                <div class="js-form-message">
+                  <label class="sr-only" >Date of birth</label>
+                  <div class="input-group">
+                                <%= f.input :date_of_birth, as: :date, label: false, :order => [:day, :month, :year], :start_year => 2000,:end_year => 1918, required: true %>
+              <small class="text-white">For analysis only and we will never share your date of birth with other users</small>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12 mb-2">
+                <div class="js-form-message">
+                  <label class="sr-only" >Email</label>
+                  <div class="input-group">
+                                <%= f.email_field :email, required: true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :class => "form-control", :placeholder => "Your Email" %>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12 mb-2">
+                <div class="js-form-message">
+                  <label class="sr-only">Password</label>
+                  <div class="input-group">
+                                 <%= f.password_field :password, required: true, autocomplete: "off", :class => "form-control", :placeholder => "Password"  %>
+                                 
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+       
+
+            <!-- Checkbox -->
+            <div class="js-form-message">
+              <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
+
+
+
+                  <span class="help-block"><strong><%= f.check_box :agreed_with_terms, required: true, :class => "text-info-strong" %>&nbsp <small class="text-white">I have read and agree to the
+    <a href="https://www.upfrica.com/guides/what-is-not-allowed-on-upfrica" target="_blank" class="link-white">Terms of use</a>
+
+    <span class="text-white"> of Africanwear.io</span></a>
+                                    </strong></small>
+                </label>
+              </div>
+            </div>
+            <!-- End Checkbox -->
+
+
+
+          
+              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12 mb-2 mt-2">
+                <div class="js-form-message">
+
+                <%= f.submit "Sign Up",  :class => "btn btn-block btn-primary transition-3d-hover" %>
+
+                
+              </div>
+            </div>
+
+
+
+</div>
+          </form>
+          <!-- End Form -->
+        </div>
+<% end %>
+        <!-- Clients -->
+        <div class="container position-absolute right-0 bottom-0 left-0 space-2">
+          <div class="js-slick-carousel u-slick"
+               data-autoplay="true"
+               data-speed="5000"
+               data-infinite="true"
+               data-slides-show="6"
+               data-responsive='[{
+                 "breakpoint": 1200,
+                 "settings": {
+                   "slidesToShow": 4
+                 }
+               }, {
+                 "breakpoint": 992,
+                 "settings": {
+                   "slidesToShow": 4
+                 }
+               }, {
+                 "breakpoint": 768,
+                 "settings": {
+                   "slidesToShow": 3
+                 }
+               }, {
+                 "breakpoint": 576,
+                 "settings": {
+                   "slidesToShow": 3
+                 }
+               }, {
+                 "breakpoint": 480,
+                 "settings": {
+                   "slidesToShow": 2
+                 }
+               }]'>
+            <div class="js-slide">
+             
+              <%= image_tag('svg/clients-logo/airbnb-white.svg', class: "u-clients ml-0" ) %>
+            </div>
+            <div class="js-slide">
+           
+              <%= image_tag('svg/clients-logo/paypal-white.svg', class: "u-clients ml-0" ) %>
+            </div>
+            <div class="js-slide">
+            
+              <%= image_tag('svg/clients-logo/mapbox-white.svg', class: "u-clients ml-0" ) %>
+            </div>
+            <div class="js-slide">
+             
+              <%= image_tag('svg/clients-logo/boring-company-white.svg', class: "u-clients ml-0" ) %>
+            </div>
+            <div class="js-slide">
+             
+              <%= image_tag('svg/clients-logo/google-white.svg', class: "u-clients ml-0" ) %>
+            </div>
+            <div class="js-slide">
+          
+              <%= image_tag('svg/clients-logo/embark-white.svg', class: "u-clients ml-0" ) %>
+            </div>
+            <div class="js-slide">
+          
+              <%= image_tag('svg/clients-logo/spotify-white.svg', class: "u-clients ml-0" ) %>
+            </div>
+            <div class="js-slide">
+         
+              <%= image_tag('svg/clients-logo/stripe-white.svg', class: "u-clients ml-0" ) %>
+            </div>
+          </div>
+        </div>
+        <!-- End Clients -->
+      </div>
+    </div>
+    <!-- End Hero Section -->
+
+
+
+<% else %>
+
+
+    <!-- Search Section -->
+    <div class="gradient-half-primary-v1">
+      <div class="bg-img-hero-center africanwear-horizontal-top-bg">
+        <div class="container space-1">
+          <div class="w-lg-80 mx-lg-auto">
+            <!-- Input -->
+            <form class="input-group input-group-borderless">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="askQuestions">
+                  <span class="fas fa-search"></span>
+                </span>
+              </div>
+              <input type="search" class="form-control" placeholder="Search for answers" aria-label="Search for answers" aria-describedby="askQuestions">
+            </form>
+            <!-- End Input -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Search Section -->
+
+
+
+<% end %>
+
+
+    <!-- Categories Section -->
+    <div class="container space-1">
+      <h2 class="h6 mb-3">Layout modes</h2>
+
+      <%#= post.tag_list %>
+   
+      <div class="row align-items-center">
+        <div class="col-xl-6 mb-5 mb-xl-0">
+          <!-- Categories Nav -->
+          <ul class="nav nav-classic nav-rounded nav-shadow">
+            <li class="nav-item">
+              <a class="nav-link" href="boxed-classic.html">Classic</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="boxed-grid.html">Grid</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="boxed-masonry.html">Masonry</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="boxed-modern.html">Modern</a>
+            </li>
+          </ul>
+          <!-- End Categories Nav -->
+        </div>
+
+        <div class="col-xl-6 text-xl-right">
+          <!-- Button Group -->
+          <div class="btn-group btn-group-toggle">
+            <a class="btn btn-outline-secondary btn-custom-toggle-primary btn-sm-wide" href="boxed-masonry.html">Boxed</a>
+            <a class="btn btn-outline-secondary btn-custom-toggle-primary btn-sm-wide active" href="fullwidth-masonry.html">Fullwidth</a>
+          </div>
+          <!-- End Button Group -->
+        </div>
+      </div>
+    </div>
+    <!-- Categories Section -->
+
+    <!-- Portfolio Section -->
+  <div class="container u-cubeportfolio space-2 space-bottom-md-3">
+      <div class="u-cubeportfolio">
+        <!-- Filter -->
+        <ul id="filterControls" class="list-inline cbp-l-filters-alignRight text-center">
+          <li class="list-inline-item cbp-filter-item cbp-filter-item-active u-cubeportfolio__item" data-filter="*">All</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".women">Women</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".men">Men</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".girls">Girls</li>
+          <li class="list-inline-item cbp-filter-item u-cubeportfolio__item" data-filter=".girls">Boys</li>
+
+        </ul>
+        <!-- End Filter -->
+
+        <!-- Content -->
+        <div class="cbp"
+             data-layout="grid"
+             data-controls="#filterControls"
+             data-animation="quicksand"
+             data-x-gap="32"
+             data-y-gap="32"
+             data-load-more-selector="#cubeLoadMore"
+             data-load-more-action="auto"
+             data-load-items-amount="2"
+             data-media-queries='[
+              {"width": 1500, "cols": 4},
+              {"width": 1100, "cols": 4},
+              {"width": 800, "cols": 3},
+              {"width": 480, "cols": 2},
+              {"width": 300, "cols": 1}
+            ]'>
+          <!-- Item -->
+
+          <% @posts.each do |post| %>
+ <% if Fashion.friendly.find(post.fashion_id).name == "Women" %>
+
+          <div class="cbp-item rounded women">
+            
+
+            <span class="cbp-caption">
+              <div class="cbp-caption-defaultWrap">
+
+               
+        
+         <%= link_to (image_tag(post.postimages[0].url(:large), :alt =>"")), post_path(post) %>
+
+
+
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+
+                    <h4 class="h6 text-white mb-0 wht"><%= link_to post.name.titleize, post_path(post) if post.name %></h4>
+
+                    <p class="small text-white-70 mb-0">
+                    <%= post.currency %> <%= number_with_precision(post.price, precision: 0, :delimiter => ',') %> <i class="fas fa-map-marker ml-2"></i>
+                    <%#= post.town.titleize if post.town %>, <%#= post.country_name if post.country  %> <%#= link_to (flag_icon(post.country.downcase.to_sym)), post_path(post.slug) if post.country %> </span>
+                  </p>
+                    <p class="small text-white-70 mb-0 wht">
+                      by <%= link_to post.user.displayname.titleize, user_path(post.user.slug) if post.user.displayname %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <!-- End Item -->
+
+
+
+
+          <!-- Item -->
+          <% elsif Fashion.friendly.find(post.fashion_id).name == "Men" %>
+          <div class="cbp-item rounded men">
+  <span class="cbp-caption">
+              <div class="cbp-caption-defaultWrap">
+                
+                <%= link_to (image_tag(post.postimages[0].url(:large), :alt =>"")), post_path(post) %>
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0 wht"><%= link_to post.name.titleize, post_path(post) if post.name %></h4>
+
+                    <p class="small text-white-70 mb-0">
+                    <%= post.currency %> <%= number_with_precision(post.price, precision: 0, :delimiter => ',') %> <i class="fas fa-map-marker ml-2"></i><%#= post.town.titleize if post.town %>, <%#= post.country_name if post.country  %> <%#= link_to (flag_icon(post.country.downcase.to_sym)), post_path(post.slug) if post.country %> </span>
+                  </p>
+                    <p class="small text-white-70 mb-0 wht">
+                      by <%= link_to post.user.displayname.titleize, user_path(post.user.slug) if post.user.displayname %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </span>
+          </div>
+          <!-- End Item -->
+
+
+
+
+          <!-- Item -->
+        <% elsif Fashion.friendly.find(post.fashion_id).name == "Girls" %>
+          <div class="cbp-item rounded girls illustration">
+  <span class="cbp-caption">
+              <div class="cbp-caption-defaultWrap">
+                
+                 <%= link_to (image_tag(post.postimages[0].url(:large), :alt =>"")), post_path(post) %>
+
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0 wht"><%= link_to post.name.titleize, post_path(post) if post.name %></h4>
+
+                    <p class="small text-white-70 mb-0">
+                    <%= post.currency %> <%= number_with_precision(post.price, precision: 0, :delimiter => ',') %> <i class="fas fa-map-marker ml-2"></i>
+                    <%#= post.town.titleize if post.town %>, <%#= post.country_name if post.country  %> <%#= link_to (flag_icon(post.country.downcase.to_sym)), post_path(post.slug) if post.country %> </span>
+                  </p>
+                    <p class="small text-white-70 mb-0 wht">
+                      Sold by <%= link_to post.user.displayname.titleize, user_path(post.user.slug) if post.user.displayname %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+           </span>
+          </div>
+          <!-- End Item -->
+
+
+
+          <!-- Item -->
+            <% elsif Fashion.friendly.find(post.fashion_id).name == "Boys" %>
+          <div class="cbp-item rounded boys illustration">
+  <span class="cbp-caption">
+              <div class="cbp-caption-defaultWrap">
+
+              <%= link_to (image_tag(post.postimages[0].url(:large), :alt =>"")), post_path(post) %>
+
+              </div>
+              <div class="cbp-caption-activeWrap bg-primary">
+                <div class="cbp-l-caption-alignCenter">
+                  <div class="cbp-l-caption-body">
+                    <h4 class="h6 text-white mb-0 wht"><%= link_to post.name.titleize, post_path(post) if post.name %></h4>
+
+                    <p class="small text-white-70 mb-0">
+                    <%= post.currency %> <%= number_with_precision(post.price, precision: 0, :delimiter => ',') %> <i class="fas fa-map-marker ml-2"></i>
+                    <%#= post.town.titleize if post.town %>, <%#= post.country_name if post.country  %> <%#= link_to (flag_icon(post.country.downcase.to_sym)), post_path(post.slug) if post.country %> </span>
+                  </p>
+                    <p class="small text-white-70 mb-0 wht">
+                      Sold by <%= link_to post.user.displayname.titleize, user_path(post.user.slug) if post.user.displayname %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+           </span>
+          </div>
+
+
+ 
+
+<% else %> 
+           <% end %> 
+
+      <!-- End Item -->
+            <% end %> 
+
+        </div>
+        <!-- End Content -->
+
+        <div class="space-bottom-2"></div>
+
+        <!-- Load More Button -->
+        <div id="cubeLoadMore" class="text-center">
+          <a href="../../assets/include/ajax/portfolio-masonry-1/load-more.html" class="cbp-l-loadMore-link link" rel="nofollow">
+            <span class="cbp-l-loadMore-defaultText">
+              Load More
+              <span class="link__icon ml-1">
+                <span class="link__icon-inner">&#43;</span>
+              </span>
+            </span>
+            <span class="cbp-l-loadMore-loadingText">Loading...</span>
+            <span class="cbp-l-loadMore-noMoreLoading">No more works</span>
+          </a>
+        </div>
+        <!-- End Load More Button -->
+      </div>
+    </div>
+    <!-- End Portfolio Section -->
+
+    <!-- Contact Us Section -->
+    <div id="SVGwave1BottomSMShapeID2" class="svg-preloader">
+      <div class="gradient-half-primary-v1">
+        <div class="container space-top-2 space-bottom-3 space-top-md-3 space-bottom-md-4">
+          <div class="row justify-content-md-between align-items-md-start">
+            <div class="col-md-6 mb-7 mb-md-0">
+              <h2 class="text-white mb-5">You wish us<br>to talk about <span class="font-weight-semi-bold">your project</span>?</h2>
+              <a class="h4 text-light" href="mailto:support@htmlstream.com">support@htmlstream.com</a>
+            </div>
+
+            <div class="col-md-6 mt-md-auto text-md-right">
+              <!-- Social Networks -->
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="#">
+                    <span class="fab fa-facebook-f btn-icon__inner"></span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="#">
+                    <span class="fab fa-google btn-icon__inner"></span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="#">
+                    <span class="fab fa-twitter btn-icon__inner"></span>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn btn-sm btn-icon btn-soft-light btn-bg-transparent" href="#">
+                    <span class="fab fa-github btn-icon__inner"></span>
+                  </a>
+                </li>
+              </ul>
+              <!-- End Social Networks -->
+
+              <span class="h4 text-white-70">+1 (062) 109-9222</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SVG Background -->
+      <figure class="position-absolute right-0 bottom-0 left-0 z-index-2">
+        <img class="js-svg-injector" src="../../assets/svg/components/wave-1-bottom-sm.svg" alt="Image Description"
+             data-parent="#SVGwave1BottomSMShapeID2">
+      </figure>
+      <!-- End SVG Background -->
+    </div>
+    <!-- End Contact Us Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <!-- Lists -->
+    <div class="border-bottom">
+      <div class="container space-2">
+        <div class="row justify-content-md-between">
+          <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+            <h4 class="h6 font-weight-semi-bold">About</h4>
+
+            <!-- List Group -->
+            <ul class="list-group list-group-flush list-group-borderless mb-0">
+              <li><a class="list-group-item list-group-item-action" href="../pages/about-agency.html">About</a></li>
+              <li><a class="list-group-item list-group-item-action" href="../pages/services-agency.html">Services</a></li>
+              <li><a class="list-group-item list-group-item-action" href="../pages/careers.html">Careers</a></li>
+            </ul>
+            <!-- End List Group -->
+          </div>
+
+          <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+            <h4 class="h6 font-weight-semi-bold">Account</h4>
+
+            <!-- List Group -->
+            <ul class="list-group list-group-flush list-group-borderless mb-0">
+              <li><a class="list-group-item list-group-item-action" href="../account/dashboard.html">Account</a></li>
+              <li><a class="list-group-item list-group-item-action" href="../account/my-tasks.html">My tasks</a></li>
+              <li><a class="list-group-item list-group-item-action" href="../account/projects.html">Projects</a></li>
+            </ul>
+            <!-- End List Group -->
+          </div>
+
+          <div class="col-sm-4 col-lg-2 mb-4 mb-lg-0">
+            <h4 class="h6 font-weight-semi-bold">Resources</h4>
+
+            <!-- List Group -->
+            <ul class="list-group list-group-flush list-group-borderless mb-0">
+              <li><a class="list-group-item list-group-item-action" href="../pages/help.html">Help</a></li>
+              <li><a class="list-group-item list-group-item-action" href="../pages/terms.html">Terms</a></li>
+              <li><a class="list-group-item list-group-item-action" href="../pages/privacy.html">Privacy</a></li>
+            </ul>
+            <!-- End List Group -->
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <h4 class="h6 font-weight-semi-bold mb-4">We are driven to deliver results for all your businesses.</h4>
+
+            <!-- Button -->
+            <button type="button" class="btn btn-xs btn-dark btn-wide transition-3d-hover text-left mb-2 mr-1">
+              <span class="media align-items-center">
+                <span class="fab fa-apple fa-2x mr-3"></span>
+                <span class="media-body">
+                  <span class="d-block">Download on the</span>
+                  <strong class="font-size-1">App Store</strong>
+                </span>
+              </span>
+            </button>
+            <!-- End Button -->
+
+            <!-- Button -->
+            <button type="button" class="btn btn-xs btn-dark btn-wide transition-3d-hover text-left mb-2">
+              <span class="media align-items-center">
+                <span class="fab fa-google-play fa-2x mr-3"></span>
+                <span class="media-body">
+                  <span class="d-block">Get it on</span>
+                  <strong class="font-size-1">Google Play</strong>
+                </span>
+              </span>
+            </button>
+            <!-- End Button -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Lists -->
+
+    <!-- Copyright -->
+    <div class="container text-center space-1">
+      <!-- Logo -->
+      <a class="d-inline-flex align-items-center mb-2" href="../home/index.html" aria-label="Front">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36px" height="36px" viewBox="0 0 46 46" xml:space="preserve" style="margin-bottom: 0;">
+          <path fill="#3F7DE0" opacity=".65" d="M23,41L23,41c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18h11.3C38,5,41,8,41,11.7V23C41,32.9,32.9,41,23,41z"/>
+          <path class="fill-info" opacity=".5" d="M28,35.9L28,35.9c-9.9,0-18-8-18-18v0c0-9.9,8-18,18-18l11.3,0C43,0,46,3,46,6.6V18C46,27.9,38,35.9,28,35.9z"/>
+          <path class="fill-primary" opacity=".7" d="M18,46L18,46C8,46,0,38,0,28v0c0-9.9,8-18,18-18h11.3c3.7,0,6.6,3,6.6,6.6V28C35.9,38,27.9,46,18,46z"/>
+          <path class="fill-white" d="M17.4,34V18.3h10.2v2.9h-6.4v3.4h4.8v2.9h-4.8V34H17.4z"/>
+        </svg>
+        <span class="brand brand-primary">Front</span>
+      </a>
+      <!-- End Logo -->
+      <p class="small text-muted">&copy; Front. 2018 Htmlstream. All rights reserved.</p>
+    </div>
+    <!-- End Copyright -->
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+   
+</body>
+</html>

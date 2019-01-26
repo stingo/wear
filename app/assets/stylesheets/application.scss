@@ -10,6 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require jquery-ui
+ *= require 'masonry/transitions'
  *= require_tree .
  *= require_self
  */
+
+ @import 'font_awesome5_webfont';
+ @import "flag-icon";
+

@@ -91,4 +91,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+    #required for devise gem remember to change to actual domain
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

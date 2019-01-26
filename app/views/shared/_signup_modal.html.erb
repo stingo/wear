@@ -1,0 +1,274 @@
+<!-- #modal-dialog -->
+
+    
+              <div class="modal bg-black login-v2" id="signup" data-pageload-addclass="animated fadeIn">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <div class="header-page text-center">
+                        <h3>Registration confirmation will be emailed to you.  </h3>
+                     </div>
+                    </div>
+                    <div class="modal-body">
+
+
+                                           <!-- begin brand -->
+            <div class="login-header">
+                <div class="text-dark text-center">
+                    This site is in Beta state -
+                    <small>Meaning some features are not yet 100% stable, and thus should NOT be relied on to be working properly OR working at all</small>
+                </div>
+                
+            </div>
+
+
+
+
+
+
+<div class="login-content">
+
+
+
+
+                     <!--  Form --hhh-->
+
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+
+
+                     <div class="form-grid">
+                        <form>
+                        
+                          <!--a class="btn btn-lg btn-block btn-social btn-facebook">
+                      <span class="fa fa-facebook"></span> Sign up with Facebook
+                    </a>
+                          
+                          <a class="btn btn-lg btn-block btn-social btn-google">
+                      <span class="fa fa-google"></span> Sign up with Facebook
+                    </a>
+                          
+                          <h2 class="no-span"><b>(OR)</b></h2-->
+
+<div class="row">
+                              <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Displayname</label>
+                                 <%= f.text_field :displayname, required: true, :placeholder => 'enter your displayname', :class => "form-control" %>
+                                 only letters(a-z), numbers(0-9), between 6-50 are allowed 
+                              </div>
+                             
+                           </div>
+
+
+
+
+
+                            <div class="row">
+                              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>First Name</label>
+                                 <%= f.text_field :first_name, required: true, :placeholder => 'First name', :class => "form-control" %>
+                              </div>
+                              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Last Name</label>
+                                 <%= f.text_field :last_name, required: true, :placeholder => 'Last name', :class => "form-control" %>
+                              </div>
+                           </div>
+
+                           
+
+          
+
+
+
+
+
+                            <div class="row">
+                              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Your Email Address</label>
+                                <%= f.email_field :email, required: true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}', :class => "form-control", :placeholder => "Your Email" %>
+                              </div>
+                              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Valid Mobile Number <small></label>
+                                 <%= f.text_field :phone_number, :placeholder => 'Your phone number', :class => "form-control" %>
+                              </div>
+                           </div>
+
+                          
+
+
+
+                           <!--password-->
+
+                         <label class="control-label"><span class="required">*</span>Password<% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %> </label>
+                        
+
+
+                                <div class="row">
+                              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                 
+                                  <%= f.password_field :password, required: true, autocomplete: "off", :class => "form-control", :placeholder => "Password"  %>
+                              </div>
+                              
+                              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                
+                                 <%= f.password_field :password_confirmation,required: true, autocomplete: "off", :class => "form-control", :placeholder => "Confirm password"  %>
+                              </div>
+                           </div>
+
+
+
+                        <!--password ends-->
+
+               <br>
+
+
+
+                <!--div class="row">
+
+
+                            <div class="col-md-7 col-lg-7 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Date Of Birth</label>
+
+                                 <%#= f.input :date_of_birth, as: :date, label: false, :order => [:day, :month, :year], :start_year => 2000,:end_year => 1918, required: true %>
+              <small>For analysis only and we will never share your date of birth with other users</small>
+     
+                              </div>
+
+
+                              <div class="col-md-5 col-lg-5 col-xs-12 col-sm-12">
+
+                                <label class="control-label"><span class="required">*</span>Gender</label>
+
+
+<%#= f.input :gender, label: false, :collection => ["Female","Male", "Other"], :selected => "Select Option" %>
+
+                   <small>For analysis only and we will never share this data</small>
+                              </div>
+
+
+
+                           </div-->
+                           <!-- end row -->
+
+                            <div class="row">
+                              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                 <label class="control-label">Town</label>
+                                 <%= f.text_field :town, label: false, :placeholder => 'town of location', class: "form-control" %>
+                              </div>
+                              <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Country</label>
+                                 <%= country_select("user", "country",  { include_blank: 'Select your country' }, { class: 'form-control' } ) %> 
+                              </div>
+                           </div>
+
+<br>
+
+                            <div class="row ">
+
+
+                           <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
+                                 <label class="control-label"><span class="required">*</span>Date Of Birth</label>
+
+                                 <%= f.input :date_of_birth, as: :date, label: false, :order => [:day, :month, :year], :start_year => 2000,:end_year => 1918, required: true %>
+              <small class="text-dark">For analysis only and we will never share your date of birth with other users</small>
+     
+                              </div>
+
+
+
+                               
+
+
+
+
+
+
+
+
+
+                              </div>
+
+
+                            
+
+
+
+                           
+
+
+ 
+
+                           
+                                 <!--div class="col-xs-12 col-sm-5 text-right">
+                                    <p class="help-block"><a data-target="#myModal" data-toggle="modal">Forgot password?</a>
+                                    </p>
+                                 </div-->
+
+                 <div class="col-md-12 col-xs-12 col-sm-12 subheadline mt-0  mb-0">
+                  <br class="subheadline mt-0  mb-0">
+  <p class="help-block"><strong><%= f.check_box :agreed_with_terms, required: true, :class => "text-info-strong" %>&nbsp <span class="text-dark">I have read and agree to the</span> 
+    <a href="https://www.upfrica.com/guides/what-is-not-allowed-on-upfrica" target="_blank" class="text-info-strong-small">Terms of use</a>
+
+    <span class="text-dark"> of upfrica.com</span></a>
+                                    </strong></p>
+                  </div>
+
+                  <hr>
+
+                                <div class="col-xs-12 col-sm-12 text-right">
+                                    <p class="help-block text-info-strong-small"> <span class="text-dark">Already a member?</span> <%= link_to('Click Here', new_user_session_path, :class => "text-info-strong-small") %><span class="text-dark"> to login.</span>
+                                    </p>
+                                 </div>
+
+
+
+                                
+                              </div>
+                           </div>
+                            <%= f.submit "Sign up",  :class => "btn btn-primary btn-lg btn-block" %>
+
+                          
+                         
+                        </form>
+                     </div>
+                     <!-- Form -->
+    <% end %>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                     
+
+                      <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                      <!--a href="javascript:;" class="btn btn-sm btn-success">Action</a-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!--end-->
+
+
+              
+
